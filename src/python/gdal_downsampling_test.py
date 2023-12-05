@@ -1,7 +1,9 @@
 from osgeo import gdal
 
 # Open the source DEM file
-source_dem_path = 'path_to_your_dem.tif'  # Replace with the path to your DEM file
+# source_dem_path = 'path_to_your_dem.tif'  # Replace with the path to your DEM file
+source_dem_path = "../../data/DEM_cropped_extent_v01/file_I_want.tif"
+
 source_dem = gdal.Open(source_dem_path, gdal.GA_ReadOnly)
 
 # Get the GeoTransform and update it for the downsampled DEM
