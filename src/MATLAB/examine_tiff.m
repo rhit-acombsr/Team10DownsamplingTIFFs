@@ -1,12 +1,27 @@
 clear all
 clc
 
+% tiff = {f,p,X,MAP,loadedImage};
+
 tiff1 = open_tiff();
+f1 = tiff1{1};
+p1 = tiff1{2};
+X1 = tiff1{3};
+MAP1 = tiff1{4};
+loadedImage1 = tiff1{5};
 
 tiff2 = open_tiff();
+f2 = tiff2{1};
+p2 = tiff2{2};
+X2 = tiff2{3};
+MAP2 = tiff2{4};
+loadedImage2 = tiff2{5};
+
+resolutionsEqual = isequal(X1,X2);
+ratioX2toX1 = [(size(X2,1)/size(X1,1)) , (size(X2,2)/size(X1,2))];
 
 function tiff = open_tiff()
-    tiff = cell(1,3);
+    tiff = {};
     
     % Display uigetfile dialog
     filterspec = {'*.tif'};
